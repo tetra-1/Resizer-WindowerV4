@@ -44,6 +44,7 @@ local default_settings = {
 }
 
 local resizer = {
+    character_load_pending = false,
     settings = {}
 }
 
@@ -164,6 +165,17 @@ end
 --]]
 windower.register_event('load', function()
     resizer.settings = config.load(default_settings)
+    resizer.character_load_pending = true
+    resizer.print("(load) Settings loaded")
+end)
+
+--[[
+* event: login
+* desc : Event called when the player has logged in.
+--]]
+windower.register_event('login', function()
+    resizer.settings = config.load(default_settings)
+    resizer.print("(login) Settings loaded")
 end)
 
 --event handler which is called when windower processes an incoming chunk, or packet
@@ -181,8 +193,17 @@ windower.register_event('incoming chunk', function(id, original, modified, injec
         return
     end
 
+    --Windower's load event occurs before logging into your character. The login event occurs after.
+    --In order to get the character specific settings on the first zone in, we need to do another config.load here.
+    --Everything should work fine afterwards.
+    if resizer.character_load_pending then
+        resizer.settings = config.load(default_settings)
+        resizer.character_load_pending = false
+    end
+
     --only modify the packet if the player is using a different character size
     if resizer.settings.use_default_size then
+        resizer.print("Using default settings")
         return
     end
 
