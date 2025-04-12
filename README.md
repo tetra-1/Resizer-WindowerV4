@@ -15,7 +15,7 @@ When you created your character you were given the choice between three sizes: s
 4) In game, open the console (Insert key by default) and type `lua load resizer`
 5) Type 'resizer' and then the size you wish to be. Example: `resizer small`
 6) Your new size won't be seen until your model is updated. Try changing zones, your equipment, or your job. (It might take a couple equipment swaps for the change to stick.)
-7) After the first time you change your size, your character's model will be updated automatically on every zone transition and player update (equipment changes and job changes as far as I know). Settings are saved too, so you should only need to run the command once. Set it and forget it.
+7) After the first time you change your size, your character's model will be updated automatically on every zone transition and player update (equipment changes and job changes as far as I know). Settings are saved too, so you should only need to run the command once.
 8) To make Windower load Resizer automatically on startup, add the `lua load resizer` command to the `Windower/scripts/init.txt` file.
 
 ## Commands
@@ -40,7 +40,7 @@ Turns output to the game's chat window on or off.
 * This should be compatible with other appearance addons, as long as they don't change the above packets for whatever reason. I only use DressUp though, so no guarantees.
 * I couldn't make autoupdating the player's size work without packet injection, so you have to do it manually after every size change.
 * As far as I know I'm the first person to find and modify the flags responsible for a player's size, so I have no idea if this will break anything long term. All I know is I've been using it for weeks without issues so that's good enough in my book.
-* Currently this addon only changes your size and no one else's. If you notice anyone else's size changing, that's a bug. I might add this feature later, but it'd be a lot easier for me if Square just gave us fantasia already so everyone else has to pay for you to see their changes.
+* Currently this addon only changes your size and no one else's. If you notice anyone else's size changing, that's a bug.
 
 ## Credits/Thanks
 * Tetra - I made this :)
