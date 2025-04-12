@@ -109,18 +109,18 @@ end
 local function print_help(isError)
     -- Print the help header..
     if (isError) then
-        resizer.print('Invalid command syntax for command: /resizer')
+        resizer.print('Invalid command syntax for command: resizer')
     else
         resizer.print('Available commands:')
     end
 
     local cmds = T{
-        { '/resizer', 'Displays the current size setting.'},
-        { '/resizer help', 'Displays the addons help information.' },
-        { '/resizer (small | medium | large | s | m | l | 0 | 1 | 2)', "Sets the player's new size to the chosen value." },
-        { '/resizer default', "Returns the player's size to the server default." },
-        { '/resizer toggle_chat', "Toggles output to the game's chat window."},
-        { '/resizer use_chat (on | off)', "Turns on or off output to the game's chat window."}
+        { 'resizer', 'Displays the current size setting.'},
+        { 'resizer help', 'Displays the addons help information.' },
+        { 'resizer (small | medium | large | s | m | l | 0 | 1 | 2)', "Sets the player's new size to the chosen value." },
+        { 'resizer default', "Returns the player's size to the server default." },
+        { 'resizer toggle_chat', "Toggles output to the game's chat window."},
+        { 'resizer use_chat (on | off)', "Turns output to the game's chat window on or off."}
     }
 
     -- Print the command list..
@@ -158,6 +158,7 @@ windower.register_event('incoming chunk', function(id, original, modified, injec
     end
 
     --get the player information, which will be useful for filtering incoming packets
+    --is this necessary? eh, whatever
     local player = windower.ffxi.get_player()
 
     --parse the incoming packet (use the modified packet for greater compatibility with other addons)
@@ -269,7 +270,7 @@ end)
 windower.register_event('addon command', function(...)
     local arg = {...}
 
-    -- Handle: /resizer - Gives basic info about the addon's current settings.
+    -- Handle: resizer - Gives basic info about the addon's current settings.
     if (#arg == 0) then
         if(resizer.settings.use_default_size) then
             resizer.print("Using the server default size.")
@@ -280,13 +281,13 @@ windower.register_event('addon command', function(...)
         return
     end
 
-    -- Handle: /resizer help - Shows the addon help.
+    -- Handle: resizer help - Shows the addon help.
     if (#arg == 1 and arg[1] == 'help') then
         print_help(false)
         return
     end
 
-    -- Handle: /resizer <size> - Changes the player's size to the chosen value.
+    -- Handle: resizer <size> - Changes the player's size to the chosen value.
     if (#arg == 1 and contains({'small', 'medium', 'large', 's', 'm', 'l', 0, 1, 2}, arg[1])) then
         if contains({'small', 'medium', 'large'}, arg[1]) then
             resizer.settings.size = arg[1]
@@ -303,7 +304,7 @@ windower.register_event('addon command', function(...)
         return
     end
 
-    -- Handle: /resizer default - Reverts to the player's default size.
+    -- Handle: resizer default - Reverts to the player's default size.
     if (#arg == 1 and arg[1] == 'default') then
         resizer.settings.use_default_size = true
 
@@ -313,7 +314,7 @@ windower.register_event('addon command', function(...)
         return
     end
 
-    -- Handle: /resizer toggle_chat - Toggles outputting to the game's chat window.
+    -- Handle: resizer toggle_chat - Toggles outputting to the game's chat window.
     if (#arg == 1 and arg[1] == 'toggle_chat') then
         resizer.settings.add_to_chat = not resizer.settings.add_to_chat
 
@@ -327,7 +328,7 @@ windower.register_event('addon command', function(...)
         return
     end
     
-    -- Handle: /resizer use_chat (on | off)
+    -- Handle: resizer use_chat (on | off)
     if (#arg == 2 and arg[1] == 'use_chat' and ({'on', 'off'}):contains(arg[2])) then
         if arg[2] == 'on' then
             resizer.settings.add_to_chat = true
