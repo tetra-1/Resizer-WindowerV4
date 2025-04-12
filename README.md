@@ -33,14 +33,19 @@ Toggles output to the game's chat window.
 * __resizer use_chat (on | off)__
 Turns output to the game's chat window on or off.
 
-## Notes
-* I'm a relatively new player with only a few months subscription time under my belt (only just reached rank 10 for my city state) so my knowledge of addons, game mechanics, etc. is limited. I have no idea if this addon will work in every scenario, only that it works while I run around Jeuno or kill lizards on the beach. Good luck :)
+## Notes and Limitations
+* Currently this addon only changes your size and no one else's. If you notice anyone else's size changing, that's a bug.
 
 * The addon works by intercepting and modifying the 0x000A (zone update) and 0x0037 (player update) packets. No packet injection is involved.
-* This should be compatible with other appearance addons, as long as they don't change the above packets for whatever reason. I only use DressUp though, so no guarantees.
 * I couldn't make autoupdating the player's size work without packet injection, so you have to do it manually after every size change.
-* As far as I know I'm the first person to find and modify the flags responsible for a player's size, so I have no idea if this will break anything long term. All I know is I've been using it for weeks without issues so that's good enough in my book.
-* Currently this addon only changes your size and no one else's. If you notice anyone else's size changing, that's a bug.
+* This should be compatible with other appearance addons, as long as they don't change the above packets for whatever reason. I only use dressup though, so no guarantees.
+
+## Warnings
+* If the game's packet structure changes in any significant way this will probably stop working, and the memory offsets will have to be updated. I know what to look for now though, so *if* that happens hopefully it's a quick fix.
+
+* I'm a relatively new player with only a few months subscription time under my belt (only just reached rank 10 for my city state) so my knowledge of addons, game mechanics, etc. is limited. I have no idea if this addon will work in every scenario, only that it works while I run around Jeuno or kill lizards on the beach. Good luck :)
+* As far as I know I'm the first person to find and modify the flags responsible for a player's size (and then document it, at least), so I don't know if this will break anything long term. I've been using it for weeks without issues though, so that's good enough in my book.
+* I sub pretty infrequently so it might take a while for me to fix any issues that pop up.
 
 ## Credits/Thanks
 * Tetra - I made this :)
