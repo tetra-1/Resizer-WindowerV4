@@ -49,7 +49,7 @@ Turns output to the game's chat window on or off.
 
 * Whoever made the [fields file](https://github.com/Windower/Lua/blob/dev/addons/libs/packets/fields.lua) in Windower's packets library - Wherever I saw an '_unknown', I knew that's where I should look for the size value
 
-* atom0s - The [0x000A](https://github.com/atom0s/XiPackets/tree/024300c4ba710ad4417e442593d3626de42168b1/world/server/0x000A) and [0x0037](https://github.com/atom0s/XiPackets/tree/024300c4ba710ad4417e442593d3626de42168b1/world/server/0x0037) documentation was essential in narrowing down which packets were responsible for player appearance updates
+* atom0s - The Ashita example addons formed the framework of the original Ashita version (which this is a port of) and the [0x000A](https://github.com/atom0s/XiPackets/tree/024300c4ba710ad4417e442593d3626de42168b1/world/server/0x000A) and [0x0037](https://github.com/atom0s/XiPackets/tree/024300c4ba710ad4417e442593d3626de42168b1/world/server/0x0037) documentation was essential in narrowing down which packets were responsible for player appearance updates
 
 * Square Enix - For making this funny game
 
