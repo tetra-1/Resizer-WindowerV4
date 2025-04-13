@@ -274,8 +274,7 @@ windower.register_event('incoming chunk', function(id, original, modified, injec
             modified = true
         else
             --If there's no _unknown1 field then the packets library must have changed, and this addon will need to be updated. Warn the user so they know what's happening and where to go.
-            resizer.print("[WARNING] Packet fields are missing or renamed so size changes won't work properly. Resizer may need an update.")
-            resizer.print(string.format("[WARNING] Please visit %s to check for new releases or report an issue.", _addon.link))
+            resizer.print(string.format("[WARNING] Packet fields are missing or renamed so size changes won't work properly. Resizer may need an update. (%s)", _addon.link))
         end
     end
 
