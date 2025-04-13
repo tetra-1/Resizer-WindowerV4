@@ -166,7 +166,6 @@ end
 windower.register_event('load', function()
     resizer.settings = config.load(default_settings)
     resizer.character_load_pending = true
-    resizer.print("(load) Settings loaded")
 end)
 
 --[[
@@ -175,7 +174,6 @@ end)
 --]]
 windower.register_event('login', function()
     resizer.settings = config.load(default_settings)
-    resizer.print("(login) Settings loaded")
 end)
 
 --event handler which is called when windower processes an incoming chunk, or packet
@@ -203,7 +201,6 @@ windower.register_event('incoming chunk', function(id, original, modified, injec
 
     --only modify the packet if the player is using a different character size
     if resizer.settings.use_default_size then
-        resizer.print("Using default settings")
         return
     end
 
