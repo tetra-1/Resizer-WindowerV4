@@ -36,7 +36,7 @@ Turns output to the game's chat window on or off.
 ## Notes and Limitations
 * Currently this addon only changes your size and no one else's.
 
-* The addon works by intercepting and modifying the 0x000A (zone update) and 0x0037 (player update) packets. No packet injection is involved.
+* The addon works by intercepting and modifying the incoming 0x000A (zone update) and 0x0037 (player update) packets. No outgoing packets are involved.
 * I couldn't make autoupdating the player's size work without outgoing packets, so for now you have to do it manually after every size change.
 * This should be compatible with other appearance addons, as long as they don't change the size flags in the above packets.
 
