@@ -1,9 +1,6 @@
 # Resizer
 Resizer is an addon for the FFXI Windower v4 client which allows you to change your character's size, or height.
 
-## Why Resizer?
-When you created your character you were given the choice between three sizes: small, medium, and large. Up until now this choice has been permanent. Square has not implemented a 'fantasia' feature (yet), and no addon that I've found has supported modifying your appearance in this way. If you were like me and weren't satisfied with the height you chose all those months, years, or even decades ago, you just had to live with it. Resizer is my solution to this problem.
-
 ## Example
 (I'll take some pictures later or something)
 
